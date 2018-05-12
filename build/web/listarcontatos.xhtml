@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+    
+    <ui:decorate template="index.xhtml">
+        <ui:define name="centro">
+            <h:form>
+                <p:dataTable value="#{controllerAgenda.listaContatos}" var="lista">
+                    <p:column headerText="ID">
+                        <p:outputLabel value="#{list.id}"/>
+                    </p:column>
+                    <p:column headerText="NOME">
+                        <p:outputLabel value="#{list.nome}"/>
+                    </p:column>
+                    <p:column headerText="ENDEREÇO">
+                        <p:outputLabel value="#{list.endereco}"/>
+                    </p:column>
+                    <p:column headerText="CIDADE">
+                        <p:outputLabel value="#{list.cidade}"/>
+                    </p:column>
+                    <p:column headerText="UF">
+                        <p:outputLabel value="#{list.uf}"/>
+                    </p:column>
+                    <p:column headerText="TELEFONE">
+                        <p:outputLabel value="#{list.telefone}"/>
+                    </p:column>
+                    <p:column headerText="CELULAR">
+                        <p:outputLabel value="#{list.celular}"/>
+                    </p:column>
+                    <p:column headerText="EMAIL">
+                        <p:outputLabel value="#{list.email}"/>
+                    </p:column>
+                    <p:column headerText="Editar">
+                        <p:commandButton value="Editar" action="editarcontato" actionListener="#{controllerAgenda.selecionarContatos()}"/>
+                    </p:column>
+                    <p:column headerText="Apagar">
+                        <p:commandButton value="Apagar" action="excluircontato" actionListener="#{controllerAgenda.selecionarContatos()}"/>
+                    </p:column>
+                    
+                </p:dataTable>                
+            </h:form>
+        </ui:define>        
+    </ui:decorate>    
+</html>
+

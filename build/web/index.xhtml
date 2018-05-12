@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <link rel="stylesheet" type="text/css" href="css/stilo.css"/>
+        <title>Agenda de Contatos</title>
+    </h:head>
+    <h:body>
+        <p:layout fullPage="true" >
+            <p:layoutUnit position="west" size="245" style="background: #006666">
+                <center>
+                    <p:outputLabel value="MENU" id="menu"/>
+                </center>
+                <h:form>
+                    <p:menu>
+                        <p:submenu label="Contatos">
+                            <p:menuitem value="Home" action="index"/>
+                            <p:menuitem value="Novo Contatos" action="novocontato" actionListener="#{controllerAgenda.novoContato()}"/>
+                            <p:menuitem value="Listar Contatos" action="listarcontatos"/>                           
+                        </p:submenu>
+                    </p:menu>
+                </h:form>
+            </p:layoutUnit>            
+            <p:layoutUnit position="center" style="background: #999999">
+                <ui:insert name="centro">
+                    <center>
+                        <p:layout>
+                            <p:outputLabel value="Agenda de Contatos" id="central"/>
+                        </p:layout>
+                        
+                        <br/>
+                        <br/>
+                        <br/>
+                        <br/>
+                        <br/>
+                        <p:graphicImage value="/imagens/logo.png" width="300" height="200"/>
+                    </center>
+                </ui:insert>
+            </p:layoutUnit>            
+        </p:layout>
+    </h:body>
+</html>
+

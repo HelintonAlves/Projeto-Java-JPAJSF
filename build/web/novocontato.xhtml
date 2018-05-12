@@ -1,0 +1,61 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+    
+    <ui:decorate template="index.xhtml">
+        <ui:define name="centro">
+            <p:fieldset legend="NOVO CONTATO" toggleable="true">
+                <center>
+                    
+                    <h:form>
+                        <h:panelGrid columns="3" id="grid">
+                            <p:outputLabel value="NOME"/>
+                            <p:inputText id="nome" value="#{controllerAgenda.contatoB.nome}" required="true" requiredMessage="???"/>
+                            <p:message for="nome"/>
+                            <p:outputLabel value="ENDEREÇO"/>
+                            <p:inputText id="endereco" value="#{controllerAgenda.contatoB.endereco}" required="true" requiredMessage="???"/>
+                            <p:message for="endereco"/>
+                            <p:outputLabel value="CIDADE"/>
+                            <p:inputText id="cidade" value="#{controllerAgenda.contatoB.cidade}" required="true" requiredMessage="???"/>
+                            <p:message for="cidade"/>
+                            <p:outputLabel value="UF"/>
+                            <p:selectOneMenu id="uf" value="#{controllerAgenda.contatoB.uf}">
+                                <f:selectItem itemLabel="SP" itemValue="SP"/>
+                                <f:selectItem itemLabel="MG" itemValue="MG"/>
+                                <f:selectItem itemLabel="RJ" itemValue="RJ"/>                          
+                            </p:selectOneMenu>
+                            <p:message for="uf"/>
+                            <p:outputLabel value="TELEFONE"/>
+                            <p:inputText id="telefone" value="#{controllerAgenda.contatoB.telefone}" required="true" requiredMessage="???"/>                                
+                            <p:message for="telefone"/>
+                           
+                            <p:outputLabel value="CELULAR"/>
+                            <p:inputText id="celular" value="#{controllerAgenda.contatoB.celular}" required="true" requiredMessage="???"/>                                
+                            <p:message for="celular"/>
+                            
+                            <p:outputLabel value="EMAIL"/>
+                            <p:inputText id="email" value="#{controllerAgenda.contatoB.email}" required="true" requiredMessage="???"/>                                
+                            <p:message for="email"/>        
+                           
+                        </h:panelGrid>
+                        
+                        <p:separator style="width: 100%; height: 5px"/>
+                        <p:commandButton value="Salvar" action="#{controllerAgenda.salvarContato()}"/>
+                        <p:commandButton value="Limpar" type="reset"/>
+                        
+                    </h:form>
+                    
+                </center>
+            </p:fieldset>
+            
+            
+        </ui:define>
+    </ui:decorate>
+    
+    
+</html>
+
